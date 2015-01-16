@@ -19,7 +19,7 @@
  
     // make an associative array of senders we know, indexed by phone number
     $people = array(
-        "+12152642549"=>"Curious George"
+        "+12121234567"=>"Curious George"
     );
  
     // if the sender is known, then greet them by name

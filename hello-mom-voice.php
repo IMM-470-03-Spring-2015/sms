@@ -1,15 +1,16 @@
 <?php
  
     // make an associative array of senders we know, indexed by phone number
-    $people = array(
-        "+12121234567" => "Curious George",
-        "+2123217654" => "Mom",
+    $phonebook = array(
+        "+12152642459"=>"Me",
     );
+
+    $name = "fella";
  
     // if the sender is known, then greet them by name
     // otherwise, consider them just another monkey
-    if(!$name = $people[$_REQUEST['From']]) {
-        $name = "Monkey";
+    if(isset($phonebook[$_REQUEST['From']])) {
+        $name = $phonebook[$_REQUEST['From']];
     }
  
     // now greet the sender
@@ -17,5 +18,6 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message><?php echo $name ?>, thanks for the message!</Message>
+    <Say>Hey <?php echo $name ?>. I'm away from my phone, I just messaged you!</Say>
+    <Sms>Hey <?php echo $name ?>, thanks for the message!</Sms>
 </Response>

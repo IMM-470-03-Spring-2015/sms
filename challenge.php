@@ -27,4 +27,4 @@
 <Response>
     <Message>Hey <?php echo $name ?>, thanks for the other message!</Message>
 </Response>
-<?php } ?>
+<?php }

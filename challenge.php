@@ -4,6 +4,8 @@
     $phonebook = array(
         "+12152642459"=>"Me",
     );
+    
+    $body = $_REQUEST['Body'];
 
     $name = "fella";
  
@@ -17,6 +19,12 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
+<?php if($body == 'performance status') { ?>
 <Response>
-    <Message>Hey <?php echo $name ?>, thanks for the message!</Message>
+    <Message>Hey <?php echo $name ?>, performance is on at 8:00!</Message>
 </Response>
+<?php } else { ?>
+<Response>
+    <Message>Hey <?php echo $name ?>, thanks for the other message!</Message>
+</Response>
+<?php } ?>
